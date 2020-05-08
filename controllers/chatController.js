@@ -30,7 +30,7 @@ exports.load = function (req, res) {
 }
 
 exports.cleanChat = async function () {
-    let firstDay = new Date().getDate()
+   
     setInterval(() => {
         
         if(new Date().getHours() == 1) {
@@ -43,6 +43,6 @@ exports.cleanChat = async function () {
             })
         }
         
-    }, 1000);
+    }, 20000);
 
 }

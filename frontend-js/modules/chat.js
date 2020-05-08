@@ -58,7 +58,7 @@ export default class Chat {
     openConnection() {
         
         this.socket = io()
-  
+        console.log("Hi")
         this.socket.on('chatMessageFromServer', (data) => {
             this.displayMessageFromServer(data)
         })
@@ -142,7 +142,7 @@ export default class Chat {
             </div>
             <div class="chat-message"><div class="chat-message-inner">
           <strong>${data.username}:</strong>
-          ${sanitizeHTML(data.message)}
+          ${this.sanitizeHTML(data.message)}
             </div>
         </div>
         `))
