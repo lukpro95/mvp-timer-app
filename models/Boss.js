@@ -122,16 +122,13 @@ function createTimestamp(hours, minutes) {
     if(hours && minutes) {
         let timeSet = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate(), parseInt(hours)+2, minutes)
         console.log("Timestamp for Slain: " + timeSet)
-
         return timeSet
-
     } else {
-
         let timeSet = new Date()
+        timeSet.setHours(timeSet.getHours()+2)
+        timeSet = new Date(timeSet)
         console.log("Current timestamp: " + timeSet)
-
         return timeSet
-
     }
 
 }
