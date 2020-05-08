@@ -1,0 +1,60 @@
+<%- include('./includes/header') %>
+
+    <main>
+
+        <%- include('includes/flash.ejs') %>
+
+        <div class="menu-title"><h2>Respawn Table</h2></div>
+
+        <hr class="underline">
+
+        <div class="table text-center" id="time-table">
+
+            <%- include('includes/table-headers.ejs') %>
+
+                <% bosses.forEach((boss) => { %>
+                <div class="record">
+                    <div  id="boss-record" class="boss-table-time">
+                        
+                        <div id="details">
+                            <span id="name"><%= boss.name %></span>
+                            <span id="map">(<%= boss.map %>)</span>
+                        </div>
+                        
+                        <div>
+                            <form id="launcherForm" action="/respawn-table/launch-timer" method="POST">
+                                <input type="text" id="hidden" name="id" value="<%= boss._id %>">
+
+                                <%
+                                let hh = boss.timeSlain.getHours()
+                                let mm = boss.timeSlain.getMinutes()
+                                if(boss.timeSlain.getHours() < 10) { hh = `0${boss.timeSlain.getHours()}`}
+                                if(boss.timeSlain.getMinutes() < 10) { mm = `0${boss.timeSlain.getMinutes()}`}
+                                %>
+
+                                <input type="time" name="time" id="time" value="<%= hh %>:<%= mm %>">
+                                <button id="launch" type="submit" class="btn btn-set access">Launch</button>
+                            </form>
+                        </div>
+
+                        <div id="spawn">
+                            <div>
+                            <% if(boss.maxTimeSpawn == -1){%>
+                                <span id="timer<%= bosses.indexOf(boss) %>" class="timer">Timer Not Set</span>
+                            <% } else if(boss.maxTimeSpawn == 0){%>
+                                <span id="timer<%= bosses.indexOf(boss) %>" class="timer">Check Map!</span>
+                            <% } else { %>
+                                <span id="timer<%= bosses.indexOf(boss) %>" class="timer">In <%= boss.minTimeSpawn %> to <%= boss.maxTimeSpawn %> minutes</span>
+                            <% } %>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <% }) %>
+                
+        </div>
+
+    </main>
+
+<%- include('./includes/footer') %>

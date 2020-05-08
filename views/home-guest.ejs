@@ -1,0 +1,49 @@
+<%- include('./includes/header') %>
+
+    <main>
+
+        <%- include('includes/flash.ejs') %>
+
+        <div class="welcome-text">
+            <p>Welcome to our new Timer Application!</p>
+            <p class="text">
+                Don't waste your precious time and leave the job to us! 
+                We will store your times and keep you informed of every spawned Boss in Ragnarok Online on TalonRO server! 
+                All you need to do is to fill the registration form on the right then log into your newly created account 
+                and you are good to go!
+            </p>
+        </div>
+
+        <div class="register">
+            
+            <form action="/register" method="POST" class="register-form">
+
+                <div class="seperated-form">
+                    <% regErrors.forEach(function(message) { %>
+                        <div class="alert alert-danger"><%= message %></div>
+                    <% }) %>
+                </div>
+
+                <div class="seperated-form">
+                    <label for="username-reg">Username</label>
+                    <input name="username" id="username-reg" class="register-field" type="text" placeholder="Pick a username" autocomplete="off">
+                </div>
+
+                <div class="seperated-form">
+                    <label for="email-reg">Email</label>
+                    <input name="email" id="email-reg"  class="register-field" type="text" placeholder="example@mail.com" autocomplete="off">
+                </div>
+
+                <div class="seperated-form">
+                    <label for="password-reg">Password</label>
+                    <input name="password" id="password-reg"  class="register-field" type="password" placeholder="Create a password" autocomplete="off">
+                </div>
+
+                <button type="submit" class="reg-btn">Register Now!</button>
+
+            </form>
+        </div>
+
+    </main>
+
+<%- include('./includes/footer') %>

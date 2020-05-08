@@ -1,0 +1,17 @@
+
+<hr>
+    <footer>
+        <h5>Copyright © 2020 MvP Timer. All rights reserved.</h5>
+    </footer>
+
+    <% if(user) { %>
+        <button id="chat-icon" class="chat-icon chat--visible shadow border-top border-left border-right border-bottom">Open Chat</button>
+        <div id="chat-wrapper" class="chat-wrapper shadow border-top border-left border-right"></div>
+        <script src="/socket.io/socket.io.js"></script>
+    <% } %>
+
+    <script src="/main-bundled.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</body>
+</html>

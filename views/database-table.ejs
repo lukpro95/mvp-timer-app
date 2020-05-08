@@ -1,0 +1,58 @@
+<%- include('./includes/header') %>
+
+    <main>
+
+        <%- include('includes/flash.ejs') %>
+
+        <% if(user) {%>
+
+        <div class="menu-title"><h2>Database Table</h2></div>
+
+        <hr class="underline">
+
+        <div class="text-center">
+            <form action="/database-table/add" method="POST" class="create-form">
+                <input type="text" name="name" placeholder="Name of a Boss">
+                <input type="text" name="map" placeholder="Location">
+                <input type="number" name="minResp" placeholder="Min. Respawn (min)">
+                <input type="number" name="maxResp" placeholder="Max. Respawn (min)">
+                <button type="submit" class="add-btn">Add</button>
+            </form>
+        </div>
+
+        <hr class="underline">
+
+        <% } %>
+
+        <div class="table text-center" id="database-table">
+
+            <% bosses.forEach((boss) => { %>
+                <div class="record">
+                    <div  id="boss-record" class="boss-table-record">
+                        
+                        <div id="details">
+                            <span id="name"><%= boss.name %></span>
+                            <span id="map">(<%= boss.map %>)</span>
+                            <span id="min"><%= boss.minResp %> minutes</span>
+                            <span id="max"><%= boss.maxResp %> minutes</span>
+                        </div>
+
+                        <div class="boss-details" id="buttons">
+                            <button type="submit" id="edit-btn" class="btn btn-edit access">Edit</button>
+
+                            <form method="POST">
+                                <input type="text" id="hidden" name="id" value="<%= boss._id %>">
+                                <button formaction="/database-table/delete" type="submit" class="btn btn-del access">Delete</button>
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+            <% }) %>
+
+        </div>
+
+    </main>
+
+<%- include('./includes/footer') %>

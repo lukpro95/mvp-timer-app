@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>RO MvP-Timer</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/main.css'>
+</head>
+<body>
+    
+    <header>
+
+        <div class ="title">
+            <a href="/"><strong>MVP Timer</strong></a>
+        </div>
+
+        <% if(!user) {%>
+
+            <div class="sign-in">
+                <form action="/login" method="POST" class="sign-in-form"> 
+                    <input name="username" class="sign-in-field" type="text" placeholder="Username" autocomplete="off">
+                    <input name="password" class="sign-in-field" type="password" placeholder="Password" autocomplete="off">
+                    <button type="submit" class="btn">Sign In</button>
+                </form>
+            </div>
+
+        <% } else { %>
+
+            <div class="sign-out">
+                    
+                    <form action="/logout" method="POST" class="sign-out-form">
+                    <label for="">Welcome <strong><%= user.username %></strong>!</label>
+                    <button type="submit" class="btn">Log Out</button>
+                    </form>
+            </div>
+
+        <% } %>
+
+    </header>
+<hr>
