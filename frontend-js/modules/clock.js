@@ -9,7 +9,7 @@ export default class Clock {
         setInterval(() => {
 
             for(let n = 0; n < this.count ; n++){
-                $(`#timer${n}`).load(`http://localhost:3000/respawn-table #timer${n}`)
+                $(`#timer${n}`).load(`https://mvptimerapp.herokuapp.com/respawn-table #timer${n}`)
             }
 
         }, 1000)
