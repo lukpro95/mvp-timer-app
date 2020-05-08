@@ -120,7 +120,7 @@ Boss.prototype.editBoss = function () {
 function createTimestamp(hours, minutes) {
 
     if(hours && minutes) {
-        let timeSet = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate(), hours, minutes)
+        let timeSet = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate(), parseInt(hours)+2, minutes)
         console.log("Timestamp for Slain: " + timeSet)
 
         return timeSet
