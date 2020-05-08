@@ -7,6 +7,7 @@ export default class Clock {
     startClock() {
 
         setInterval(() => {
+            console.log(new Date())
             for(let n = 0; n < this.count ; n++){
                 $(`#timer${n}`).load(`${document.URL} #timer${n}`)
             }

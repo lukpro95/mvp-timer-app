@@ -125,8 +125,8 @@ function createTimestamp(hours, minutes) {
         return timeSet
     } else {
         let timeSet = new Date()
-        timeSet.setHours(timeSet.getHours()+2)
-        timeSet = new Date(timeSet)
+        // timeSet.setHours(timeSet.getHours()+2)
+        // timeSet = new Date(timeSet)
         console.log("Current timestamp: " + timeSet)
         return timeSet
     }
