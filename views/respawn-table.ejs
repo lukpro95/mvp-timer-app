@@ -26,7 +26,7 @@
                                 <input type="text" id="hidden" name="id" value="<%= boss._id %>">
 
                                 <%
-                                let hh = boss.timeSlain.getHours()
+                                let hh = boss.timeSlain.getHours()+2;
                                 let mm = boss.timeSlain.getMinutes()
                                 if(boss.timeSlain.getHours() < 10) { hh = `0${boss.timeSlain.getHours()}`}
                                 if(boss.timeSlain.getMinutes() < 10) { mm = `0${boss.timeSlain.getMinutes()}`}
