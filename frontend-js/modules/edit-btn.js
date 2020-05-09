@@ -31,10 +31,10 @@ export default class Edit {
                 this.record.insertAdjacentHTML
                 ("afterbegin", `
                     <form action="/database-table/edit" method="POST" id="edit-form">
-                        <input type="text" id="name" name="name" value="${bossName}" placeholder="Name of a Boss">
-                        <input type="text" id="map" name="map" value="${bossMap}" placeholder="Location">
-                        <input type="number" id="min" name="minResp" value="${min}" placeholder="Min. Respawn (min)">
-                        <input type="number" id="max" name="maxResp" value="${max}" placeholder="Max. Respawn (min)">
+                        <input type="text" id="name" name="name" value="${bossName}" placeholder="Name of a Boss" autocomplete="off">
+                        <input type="text" id="map" name="map" value="${bossMap}" placeholder="Location" autocomplete="off">
+                        <input type="number" id="min" name="minResp" value="${min}" placeholder="Min. Respawn (min)" autocomplete="off">
+                        <input type="number" id="max" name="maxResp" value="${max}" placeholder="Max. Respawn (min)" autocomplete="off">
                         <input type="text" id="hidden" name="id" value="${this.id.value}">
                         <button class="btn btn-save access" type="submit">Save</button>
                     </form>
