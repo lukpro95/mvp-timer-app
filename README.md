@@ -4,5 +4,3 @@ The idea was to have a database of Boss Monsters in game Ragnarok Online and kee
 Refreshing of clocks done by using jqueries.
 
 Real time chat function when logged in.
-
-See at: https://mvptimerapp.herokuapp.com/
